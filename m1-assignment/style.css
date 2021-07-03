@@ -57,6 +57,13 @@ footer{
     margin: auto;
     margin-top: 100px;
 }
+
+#contact{
+    margin: auto;
+    width: 400px;
+    background-color: lavender;
+}
+
 div #address{
     background-color:lavender;
     padding: 15px;
