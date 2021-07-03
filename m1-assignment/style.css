@@ -30,6 +30,14 @@ main{
     text-align: center;
 }
 
+main span{
+    display: inline-block;
+    margin-left: 60px;
+}
+
+main div{
+    display: inline;
+}
 #top-section h1{
     color: white;
     background-color: gray;
