@@ -45,6 +45,14 @@ main div{
     margin: auto;
 }
 
+table{
+    margin: auto;
+}
+
+footer{
+    margin: auto;
+}
+
 #signup{
     margin: auto;
     margin-top: 100px;
