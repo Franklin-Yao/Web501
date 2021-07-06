@@ -1,0 +1,77 @@
+nav ul {
+    display: table;
+    width: 100%;
+    background-color: gray;
+    opacity: 0.8;
+    margin-top: -10px;
+    padding: 20px;
+}
+
+nav ul li{
+    display: table-cell;
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#top-section{ 
+    background: url(images/index-background.jpg); 
+    background-size: cover;
+    height: 600px;
+}
+
+header{
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+main{
+    text-align: center;
+}
+
+main span{
+    display: inline-block;
+    margin-left: 60px;
+}
+
+main div{
+    display: inline;
+}
+#top-section h1{
+    color: white;
+    background-color: gray;
+    width: 430px;
+    margin: auto;
+}
+
+table{
+    margin: auto;
+}
+
+footer{
+    margin: auto;
+}
+
+#signup{
+    margin: auto;
+    margin-top: 100px;
+}
+
+#contact{
+    margin: auto;
+    width: 400px;
+    background-color: lavender;
+}
+
+div #address{
+    background-color:lavender;
+    padding: 15px;
+    width: 400px;
+    margin: auto;
+}
+
+form button{
+    display: block;
+    margin: auto;
+}
