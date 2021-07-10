@@ -6,7 +6,6 @@ nav ul {
     margin-top: -10px;
     padding: 20px;
 }
-
 nav ul li{
     display: table-cell;
     text-align: center;
@@ -14,43 +13,97 @@ nav ul li{
     font-size: 1.3em;
     font-weight: bold;
 }
-
 #top-section{ 
     background: url(images/index-background.jpg); 
-    background-size: cover;
-    height: 600px;
+    background-size: 100%;
+    background-position: 0 -200px;
+    height: 650px;
 }
-
 header{
     font-size: 40px;
-    margin-left: 50px;
+    margin-left: 80px;
+    color: greenyellow;
+    font-family:cursive;
 }
-
 main{
     text-align: center;
 }
-
+main h2{
+    font-size: 32px;
+    font-family: monospace;
+}
+main p{
+    font-size: 20px;
+}
 main span{
     display: inline-block;
-    margin-left: 60px;
+    margin-left: 100px;
 }
-
+main span p{
+    font-weight: bold;
+}
 main div{
     display: inline;
 }
 #top-section h1{
     color: white;
-    background-color: gray;
     width: 430px;
+    margin: 10px auto;
+}
+#address{
+    background-color:rgb(66, 62, 62);
+    opacity: 0.9;
+    padding: 15px;
+    width: 400px;
     margin: auto;
+    border-radius: 15px;
+}
+#address p{
+    color: white;
+    font-weight: bold;
+}
+input{
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    height: 25px;
+    outline: none;
+}
+button{
+    height: 30px;
+    border-radius: 5px;
+    background: greenyellow;
+    outline: none;
 }
 
 table{
-    margin: auto;
+    width: 1000px;
+    margin: 4em auto 0 auto;
+    border-collapse: collapse;
+}
+caption{
+    height: 40px;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 1em;
+}
+thead{
+    background: #eeffe6;
+}
+tbody{
+    background: #eeffe6;
+    text-align: center;
+}
+th, td{
+    height: 35px;
+    vertical-align: middle;
+    border: solid 1px #852b1b;
 }
 
 footer{
-    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
 #signup{
@@ -58,20 +111,37 @@ footer{
     margin-top: 100px;
 }
 
+/* Contact page */
 #contact{
-    margin: auto;
+    margin: 100px auto;
+    background-color:rgb(66, 62, 62);
+    opacity: 0.9;
+    padding: 15px;
     width: 400px;
-    background-color: lavender;
+    color: white;
+    border-radius: 15px;
 }
-
-div #address{
-    background-color:lavender;
+input[type="submit"]{
+    background-color: greenyellow;
+}
+/* Login page */
+#login{
+    background-color:rgb(66, 62, 62);
+    opacity: 0.9;
     padding: 15px;
     width: 400px;
     margin: auto;
+    border-radius: 15px;
+    color: white;
 }
-
+#login input[type="text"]{
+    width: 80%;
+}
+#login p{
+    color: burlywood;
+}
 form button{
     display: block;
+    width: 140px;
     margin: auto;
 }
