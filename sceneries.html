@@ -7,18 +7,41 @@
             #image-gallery{ 
               display: grid;
               grid-template-columns: auto auto auto auto;
-              grid-gap: 20px;
+              grid-gap: 10px;
               }
             #image-gallery img{
               border: 1px solid #ccc;
               box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-              width: 300px;
+              width: 250px;
               height: 200px;
             }
             li{
-                list-style-type: none; /* Remove bullets */
-                padding: 0; /* Remove padding */
-                margin: 0; /* Remove margins */
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                position: relative;
+            }
+            .caption{
+                background-color: #ccc;
+                width: 250px;
+                margin-left: 40px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            .description{
+                visibility:hidden; 
+                background-color: rgba(255, 255, 255, 0.7);
+                position: absolute;
+                text-align: center;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                top: 40%;
+                max-width: 50%;
+                max-height: 20%;
+            }
+            li:hover .description {
+                visibility:visible;
+                cursor: pointer;
             }
         </style>
     </head>
@@ -50,48 +73,79 @@
             <!-- Main Content -->
             <main>
                 <ul id="image-gallery">
-                    <li>
-                        <img class="photo" src="images/sceneries1.jfif" alt="Sample photo">
+                    <!-- <li class="photo">
+                        <img src="images/sceneries1.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries2.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries2.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries3.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries3.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries4.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries4.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries5.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries5.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries6.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries6.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries7.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries7.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries8.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries8.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries9.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries9.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries10.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries10.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries11.jfif" alt="Sample photo">
+                    <li class="photo">
+                        <img src="images/sceneries11.jfif">
                     </li>
-                    <li>
-                        <img class="photo" src="images/sceneries12.jfif" alt="Sample photo">
-                    </li>
+                    <li class="photo">
+                        <img src="images/sceneries12.jfif">
+                    </li> -->
                 </ul>
                 
             </main> <!-- End Main Content -->
 
             <!-- Footer Information -->
             <footer>&copy; Copyright 2020</footer>
-        </div> <!-- End Container -->
+        </div>
+        <script>
+            var photos = [];
+            var fileNames = [];
+            var imageList = [];
+            var image;
+
+            var openList = "<li id='photo";
+            var closeList = "</li>";
+            var openFigure = '<figure>';
+            var closeFigure = '</figure>';
+            var openFigCaption = "<figcaption class='caption'>";
+            var closeFigCaption = '</figcaption>'
+            var openDesc = "<p class='description'>"
+            var closeDesc = "</p>"
+            var captionTexts = ['River side', 'Lake', 'mountains', 'sidewalk',
+            'sky', 'water and flower', 'trees', 'green water', 
+            'sunshine in the water', 'blue water', 'river', 'smog mountain'];
+            var descTexts = ['River side', 'Lake', 'mountains', 'sidewalk',
+            'sky', 'water and flower', 'trees', 'green water', 
+            'sunshine in the water', 'blue water', 'river', 'smog mountain'];
+
+            //Create a loop to create 12 images
+            for (var i=0; i<12; i++){
+                fileNames.push("sceneries"+(i+1));
+                photos.push("<img src='images/"+fileNames[i]+".jfif'>");
+                image = openList + (i+1) + "'>" + openFigure + photos[i] + openFigCaption + captionTexts[i] + closeFigCaption + closeFigure + openDesc +captionTexts[i]+ closeDesc+ closeList;
+                imageList.push(image)
+            }
+            // Display all six image codes stored in the array
+            document.getElementById("image-gallery").innerHTML = imageList.join("");
+        </script>
     </body>
 </html>
