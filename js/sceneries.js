@@ -34,15 +34,25 @@ function displayInfoBox(){
     infoBoxTitles = ['River side', 'Lake', 'mountains', 'sidewalk',
     'sky', 'water and flower', 'trees', 'green water', 
     'sunshine in the water', 'blue water', 'river', 'smog mountain'];
-    infoBoxDescs = ['description1', 'description2', 'description3', 'description4',
-    'description5', 'description6', 'description7', 'description8',
-    'description9', 'description10', 'description11', 'description12']
+    infoBoxDescs = ['On this beautiful river side, there are lots of ducks. In the water, you will see a lots of fish. If you want, you can fish here all the day', 
+    'Near the lake, there are many stories. Long long time ago, a son of your god come to paly near the lake without telling his parents...', 
+    'There are so many gorgeous mountains, which make this place a perfect place for hiking. You can go hiking here every weekend.', 
+    'This sidewalk is so clean that attract so many yong people and old people to walk here in the afternoon after their dinner.',
+    'In the sky, you can see the beautiful clouds. And sometime, there are planes. What is most special is that....', 
+    'Here the folowers are so beautiful that no one wants to leave when he comes here.', 
+    'Trees grow so happily here. Just after one year, they are much taller than last year. Maybe it is because there are enough water and sunshine', 
+    'We have green water here, which is so specail. You will never see green water somewhere else',
+    'There is beautiful sunshine in the water, which is really rare and you will never see it in other places.', 
+    'Here the water is blue because there are lots of minerals in the water. This make it looks like the eye of beautiful girls.', 
+    'This river doesnt have lots of water, but it has lots of fish.', 
+    'The smog in the mountain makes this place so beautiful that every traveller will take tons of pictures.']
     descs = document.querySelectorAll(".description");
-    for (var i=0; i<desc.length; i++){
-        descs[i].onclick = function(idx){
+    for (var i=0; i<descs.length; i++){
+        let j = i;
+        descs[i].onclick = function(){
             document.getElementById("info-box").style.visibility = "visible";
-            // document.getElementById("info-box-title").innerHTML = infoBoxTitles[idx];
-            // document.getElementById("info-box-desc").innerHTML = infoBoxDescs[idx];
+            document.getElementById("info-box-title").innerHTML = infoBoxTitles[j];
+            document.getElementById("info-box-desc").innerHTML = infoBoxDescs[j];
         };
     }
 }
@@ -51,7 +61,3 @@ displayInfoBox();
 document.getElementById("info-box-close").onclick = function(){
     document.getElementById("info-box").style.visibility = "hidden";
 }
-// document.getElementById("info-box").style.visibility = "visible";
-
-
-        
