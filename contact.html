@@ -32,13 +32,25 @@
                     <form action="/contact" method="POST">
                         <fieldset>
                             <legend>Fill Up The Form to Contact Us:</legend>
-                            <label>YOUR NAME</label><br>
+                            <label>Your name</label><br>
                             <input type="text" name="name"><br>
-                            <label>YOUR EMAIL</label><br>
-                            <input type="text" name="email"><br>
-                            <br>YOUR MESSAGE (OPTIONAL)<br>
+                            <label>How should we contact you?</label><br>
+                            <select name="contact-options" id="contact-options">
+                                <option value="none">Select one</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                            </select><br><br>
+                            <div id="email">
+                                <label>Your email</label><br>
+                                <input type="text" name="email"><br>
+                            </div>
+                            <div id="phone">
+                                <label>Your phone number</label><br>
+                                <input type="text" name="phone"><br>
+                            </div>
+                            <br>Your message (OPTIONAL)<br>
                             <textarea rows="5" cols="30"></textarea><br>
-                            <input type="submit" value="contact us">
+                            <input type="submit" value="Contact us">
                         </fieldset>
                     </form>
                 </div>
@@ -54,4 +66,5 @@
             <footer>&copy; Copyright 2020</footer>
         </div> <!-- End Container -->
     </body>
+    <script src="js/contact.js"></script>
 </html>

@@ -121,6 +121,13 @@ footer{
 input[type="submit"]{
     background-color: greenyellow;
 }
+#contact #email{
+    display: none;
+}
+#contact #phone{
+    display: none;
+}
+
 /* Login page */
 #login{
     background-color:rgb(66, 62, 62);
