@@ -28,12 +28,12 @@ header{
 main{
     text-align: center;
 }
-main h2{
+.large-font{
+    font-size: 20px;
+}
+#help-title{
     font-size: 32px;
     font-family: monospace;
-}
-main p{
-    font-size: 20px;
 }
 main span{
     display: inline-block;
@@ -41,9 +41,6 @@ main span{
 }
 main span p{
     font-weight: bold;
-}
-main div{
-    display: inline;
 }
 #top-section h1{
     color: white;
@@ -144,4 +141,64 @@ form button{
     display: block;
     width: 140px;
     margin: auto;
+}
+
+/* Sceneries page */
+#image-gallery{ 
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+}
+#image-gallery img{
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    width: 250px;
+    height: 200px;
+}
+li{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.caption{
+    background-color: #ccc;
+    width: 250px;
+    margin-left: 40px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+.description{
+    visibility:hidden; 
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 40%;
+    max-width: 50%;
+    max-height: 20%;
+}
+li:hover .description {
+    visibility:visible;
+    cursor: pointer;
+}
+#info-box{
+    width: 350px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    position: relative;
+    top: -500px;
+    left: 700px;
+    visibility: hidden;
+}
+#info-box h2, #info-box p{
+    text-align: left;
+}
+#info-box a{
+    margin-top: 20px;
+    color: yellow;
 }

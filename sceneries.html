@@ -3,47 +3,6 @@
     <head>
         <title>Neighbors</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <style>
-            #image-gallery{ 
-              display: grid;
-              grid-template-columns: auto auto auto auto;
-              grid-gap: 10px;
-              }
-            #image-gallery img{
-              border: 1px solid #ccc;
-              box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-              width: 250px;
-              height: 200px;
-            }
-            li{
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-                position: relative;
-            }
-            .caption{
-                background-color: #ccc;
-                width: 250px;
-                margin-left: 40px;
-                font-family: 'Courier New', Courier, monospace;
-            }
-            .description{
-                visibility:hidden; 
-                background-color: rgba(255, 255, 255, 0.7);
-                position: absolute;
-                text-align: center;
-                margin: 0 auto;
-                left: 0;
-                right: 0;
-                top: 40%;
-                max-width: 50%;
-                max-height: 20%;
-            }
-            li:hover .description {
-                visibility:visible;
-                cursor: pointer;
-            }
-        </style>
     </head>
     <body>
         <!-- Container to wrap everything-->
@@ -72,80 +31,19 @@
 
             <!-- Main Content -->
             <main>
-                <ul id="image-gallery">
-                    <!-- <li class="photo">
-                        <img src="images/sceneries1.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries2.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries3.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries4.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries5.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries6.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries7.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries8.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries9.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries10.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries11.jfif">
-                    </li>
-                    <li class="photo">
-                        <img src="images/sceneries12.jfif">
-                    </li> -->
-                </ul>
-                
+                <div id="gallery">
+                    <ul id="image-gallery"></ul>
+                    <div id="info-box">
+                        <h2 id="info-box-title">Snow Land</h2>
+                        <p id="info-box-desc">Most of plants and animals are </p>
+                        <a id="info-box-close">Close This To Close</a>
+                    </div>
+                </div>
             </main> <!-- End Main Content -->
 
             <!-- Footer Information -->
             <footer>&copy; Copyright 2020</footer>
         </div>
-        <script>
-            var photos = [];
-            var fileNames = [];
-            var imageList = [];
-            var image;
-
-            var openList = "<li id='photo";
-            var closeList = "</li>";
-            var openFigure = '<figure>';
-            var closeFigure = '</figure>';
-            var openFigCaption = "<figcaption class='caption'>";
-            var closeFigCaption = '</figcaption>'
-            var openDesc = "<p class='description'>"
-            var closeDesc = "</p>"
-            var captionTexts = ['River side', 'Lake', 'mountains', 'sidewalk',
-            'sky', 'water and flower', 'trees', 'green water', 
-            'sunshine in the water', 'blue water', 'river', 'smog mountain'];
-            var descTexts = ['River side', 'Lake', 'mountains', 'sidewalk',
-            'sky', 'water and flower', 'trees', 'green water', 
-            'sunshine in the water', 'blue water', 'river', 'smog mountain'];
-
-            //Create a loop to create 12 images
-            for (var i=0; i<12; i++){
-                fileNames.push("sceneries"+(i+1));
-                photos.push("<img src='images/"+fileNames[i]+".jfif'>");
-                image = openList + (i+1) + "'>" + openFigure + photos[i] + openFigCaption + captionTexts[i] + closeFigCaption + closeFigure + openDesc +captionTexts[i]+ closeDesc+ closeList;
-                imageList.push(image)
-            }
-            // Display all six image codes stored in the array
-            document.getElementById("image-gallery").innerHTML = imageList.join("");
-        </script>
+        <script src="js/sceneries.js"></script>
     </body>
 </html>
