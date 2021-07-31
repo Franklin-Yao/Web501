@@ -10,6 +10,8 @@ function displayGallery(){
     var closeFigure = '</figure>';
     var openFigCaption = "<figcaption class='caption'>";
     var closeFigCaption = '</figcaption>'
+    var openA = '<a href="#/" class="lightbox-toggle">'
+    var closeA = '</a>'
     var openDesc = "<p class='description'>"
     var closeDesc = "</p>"
     var captionTexts = ['River side', 'Lake', 'mountains', 'sidewalk',
@@ -20,7 +22,7 @@ function displayGallery(){
     for (var i=0; i<12; i++){
         fileNames.push("sceneries"+(i+1));
         photos.push("<img src='images/"+fileNames[i]+".jfif'>");
-        image = openList + (i+1) + "'>" + openFigure + photos[i] + openFigCaption + captionTexts[i] + closeFigCaption + closeFigure + openDesc +captionTexts[i]+ closeDesc+ closeList;
+        image = openList + (i+1) + "'>" + openFigure + openA + photos[i] + closeA + openFigCaption + captionTexts[i] + closeFigCaption + closeFigure + openDesc +captionTexts[i]+ closeDesc+ closeList;
         imageList.push(image)
     }
     // Display all six image codes stored in the array
@@ -56,8 +58,41 @@ function displayInfoBox(){
         };
     }
 }
+
+function addLightbox(){
+    /* Open lightbox on button click */
+    $('.lightbox-toggle img').click(function(){
+        $('.backdrop').animate({'opacity':'.50'}, 300, 'linear').css('display', 'block');
+        $('.box').fadeIn();
+
+        //Check if lightbox has an image
+        if ($('.box').contents('img')) {
+            $('.box').contents().remove('img'); //If true, clear image
+        }
+
+        var img = $(this).clone(); //Duplicate DOM element
+        $('.box').append(img); //Insert duplicated element in another element
+        //Get text content in attribute
+        // var $altvalue = $(this).attr('alt'); //or var altvalue = $(this).attr('alt');
+
+        // if ($altvalue=="Angkor Wat") {
+        //     var img = $('#photo:nth-child(1) img').clone(); //Duplicate DOM element
+        //     $('.box').append(img); //Insert duplicated element in another element
+        // }
+    });
+
+    /* Click to close lightbox */
+    $('.close, .backdrop').click(function(){
+        $('.backdrop').animate({'opacity':'0'}, 300, 'linear', function(){
+            $('.backdrop').css('display', 'none');
+        });
+        $('.box').fadeOut();
+    });
+}
 displayGallery();
 displayInfoBox();
 document.getElementById("info-box-close").onclick = function(){
     document.getElementById("info-box").style.visibility = "hidden";
 }
+
+addLightbox();
